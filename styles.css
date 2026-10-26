@@ -1,0 +1,106 @@
+:root {
+  --fondo: #f8f7f4;
+  --texto: #1f2a33;
+  --suave: #55616b;
+  --filete: #d6d4cd;
+  --acento: #1d4a3a;
+  --titulo: Georgia, 'Times New Roman', serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--texto);
+  font: 17px/1.65 'Segoe UI', system-ui, sans-serif;
+}
+
+a { color: var(--acento); }
+.wrap { max-width: 1060px; margin: 0 auto; padding: 0 20px; }
+.solo-lectura { position: absolute; left: -9999px; }
+
+h1, h2, h3, .marca { font-family: var(--titulo); font-weight: 400; }
+
+/* Encabezado */
+.top { border-bottom: 1px solid var(--texto); }
+.top-in { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 4px 24px; padding-top: 16px; padding-bottom: 14px; }
+.marca { font-size: 1.15rem; color: var(--texto); text-decoration: none; letter-spacing: .01em; }
+.tel { margin: 0; font-size: .95rem; color: var(--suave); }
+.tel a { color: var(--texto); text-decoration: none; font-weight: 600; }
+
+/* Presentación */
+.presentacion { display: grid; gap: 28px; padding-top: 56px; padding-bottom: 64px; }
+.etiqueta { margin: 0 0 14px; font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; color: var(--acento); }
+h1 { margin: 0; font-size: clamp(2rem, 6vw, 3.1rem); line-height: 1.15; }
+.presentacion-txt p { margin: 0 0 1em; max-width: 56ch; }
+.datos { margin: 28px 0 0; border-top: 1px solid var(--filete); }
+.datos div { display: flex; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--filete); }
+.datos dt { flex: 0 0 9.5em; font-size: .85rem; color: var(--suave); padding-top: 3px; }
+.datos dd { margin: 0; }
+
+/* Secciones */
+section.wrap { padding-top: 48px; padding-bottom: 56px; border-top: 1px solid var(--filete); }
+h2 { margin: 0 0 28px; font-size: 1.7rem; }
+.num { display: block; font: 600 .8rem 'Segoe UI', sans-serif; letter-spacing: .14em; color: var(--acento); margin-bottom: 6px; }
+
+/* Tabla de servicios */
+.servicios { width: 100%; border-collapse: collapse; font-size: .97rem; }
+.servicios thead { display: none; }
+.servicios tr { display: block; padding: 16px 0; border-bottom: 1px solid var(--filete); }
+.servicios tbody tr:first-child { border-top: 1px solid var(--texto); }
+.servicios th[scope=row] { display: block; font: 400 1.15rem var(--titulo); text-align: left; margin-bottom: 4px; }
+.servicios td { display: block; padding: 2px 0; }
+.servicios td:last-child { color: var(--suave); font-size: .9rem; }
+.servicios td:last-child::before { content: 'Para: '; color: var(--acento); font-weight: 600; }
+
+/* Cómo trabajamos / FAQ / contacto */
+.pasos p { margin: 0 0 1.2em; max-width: 60ch; }
+.pasos strong { font-family: var(--titulo); font-weight: 700; color: var(--acento); }
+
+.faq details { border-bottom: 1px solid var(--filete); }
+.faq details:first-child { border-top: 1px solid var(--texto); }
+.faq summary { cursor: pointer; padding: 14px 28px 14px 0; font-family: var(--titulo); font-size: 1.08rem; list-style: none; position: relative; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: '+'; position: absolute; right: 4px; top: 12px; font-size: 1.3rem; color: var(--acento); }
+.faq details[open] summary::after { content: '\2212'; }
+.faq summary:focus-visible, button:focus-visible, .flotante:focus-visible { outline: 2px solid var(--acento); outline-offset: 3px; }
+.faq details p { margin: 0 0 16px; max-width: 60ch; color: var(--suave); }
+
+.contacto { display: grid; gap: 40px; }
+.campo { margin: 0 0 18px; }
+label { display: block; font-size: .85rem; letter-spacing: .04em; margin-bottom: 4px; color: var(--suave); }
+input, select, textarea { width: 100%; font: inherit; color: var(--texto); background: #fff; border: 1px solid #9aa3a8; border-radius: 0; padding: 9px 10px; }
+input:focus, select:focus, textarea:focus { outline: 2px solid var(--acento); outline-offset: 0; border-color: var(--acento); }
+button { font: 600 .95rem 'Segoe UI', sans-serif; letter-spacing: .04em; background: var(--acento); color: #fff; border: 0; padding: 12px 24px; cursor: pointer; }
+button:hover { background: #153a2d; }
+.aviso { min-height: 1.5em; margin: 0 0 8px; color: #8a2a2a; font-size: .9rem; }
+
+.donde { font-style: normal; }
+.donde h3 { margin: 0 0 4px; font-size: 1rem; color: var(--acento); }
+.donde p { margin: 0 0 20px; }
+.mapa { border: 1px dashed #9aa3a8; padding: 12px 14px; font-size: .88rem; color: var(--suave); text-align: center; letter-spacing: .03em; }
+
+/* Pie */
+.pie { background: var(--texto); color: #cdd3d6; padding: 28px 0; font-size: .85rem; }
+.pie p { margin: 0 0 6px; }
+
+/* WhatsApp flotante */
+.flotante { position: fixed; right: 16px; bottom: 16px; background: #fff; color: var(--acento); border: 1px solid var(--acento); padding: 8px 14px; font-size: .85rem; font-weight: 600; text-decoration: none; }
+.flotante:hover { background: var(--acento); color: #fff; }
+
+@media (min-width: 820px) {
+  body { font-size: 18px; }
+  .presentacion { grid-template-columns: 5fr 6fr; gap: 72px; padding-top: 88px; padding-bottom: 88px; }
+  .dos-col { display: grid; grid-template-columns: 1fr 2.2fr; gap: 72px; }
+  .dos-col > h2 { margin: 0; }
+  .contacto { grid-template-columns: 1.2fr 1fr; gap: 56px; }
+  .servicios thead { display: table-header-group; }
+  .servicios th[scope=col] { text-align: left; font: 600 .75rem 'Segoe UI', sans-serif; letter-spacing: .12em; text-transform: uppercase; color: var(--acento); padding: 0 16px 10px 0; border-bottom: 1px solid var(--texto); }
+  .servicios tr { display: table-row; }
+  .servicios tbody tr:first-child { border-top: 0; }
+  .servicios th[scope=row], .servicios td { display: table-cell; padding: 18px 20px 18px 0; vertical-align: top; border-bottom: 1px solid var(--filete); }
+  .servicios th[scope=row] { width: 20%; margin: 0; }
+  .servicios td:last-child { width: 28%; font-size: .95rem; }
+  .servicios td:last-child::before { content: none; }
+}
